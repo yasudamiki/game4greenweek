@@ -64,62 +64,72 @@
     </style>
   </head>
   <body>
+    <div class="maps" style="text-align: center; margin-top: 30px">
+      
+      <h3>Environmental Maps</h3>
+      
+      <div style="display: flex; justify-content: center; gap: 5px;">
 
-      <div class="maps" style="text-align: center; margin-top: 30px">
-  <h3>Environmental Maps</h3>
-  <div style="display: flex; justify-content: center; gap: 5px;">
-    <div style="text-align: center;">
-      <img id="airMap" src="air_1.png" alt="Air Quality" style="max-width: 300px;"/>
-      <br/>
-      <img src="air_key.png" alt="Air Quality Key" style="max-width: 300px; margin-top: 5px;"/>
+        <div style="text-align: center;">
+          <h4>Air Quality</h4>
+          <img id="airMap" src="air_1.png" alt="Air Quality" style="max-width: 300px;"/>
+          <br/>
+          <img src="air_key.png" alt="Air Quality Key" style="max-width: 300px; margin-top: 5px;"/>
+        </div>
+
+        <div style="text-align: center;">
+          <h4>Forest Level</h4>
+          <img id="forestMap" src="forest_3.png" alt="Forest Level" style="max-width: 300px;"/>
+          <br/>
+          <img src="forest_key.png" alt="Forest Level Key" style="max-width: 100px; margin-top: 5px;"/>
+        </div>
+
+        <div style="text-align: center;">
+          <h4>Temperature</h4>
+          <img id="tempMap" src="temp_1.png" alt="Temperature" style="max-width: 300px;"/>
+          <br/>
+          <img src="temp_key.png" alt="Temperature Key" style="max-width: 300px;"/>
+        </div>
+ 
+      </div>
+  </div>
+
+  <div class="game-layout"> <! formats the question and score boxes>
+    <div class="question-box">
+      <h2 id="question">Loading...</h2>
+      <div class="answers">
+        <button onclick="choose(0)" id="btn0"></button>
+        <button onclick="choose(1)" id="btn1"></button>
+        <button onclick="choose(2)" id="btn2"></button>
+        <button onclick="choose(3)" id="btn3"></button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+      <div style="margin-top: 15px; text-align: center;">
+        <button id="nextButton" onclick="nextQuestion()" style="display: none; padding: 10px 20px;">Next</button>
+      </div>
     </div>
-    <div style="text-align: center;">
-      <img id="forestMap" src="forest_3.png" alt="Forest Level" style="max-width: 300px;"/>
-      <br/>
-      <img src="forest_key.png" alt="Forest Level Key" style="max-width: 100px; margin-top: 5px;"/>
-    </div>
-    <div style="text-align: center;">
-      <img id="tempMap" src="temp_1.png" alt="Temperature" style="max-width: 300px;"/>
-      <img src="temp_key.png" alt="Temperature Key" style="max-width: 20px;"/>
+
+    <div class="score-table">
+      <table style="width: 50%" class="center">
+        <tr>
+          <th>Air</th>
+          <th>Forest</th>
+          <th>Temperature</th>
+        </tr>
+        <tr>
+          <td id="airScore">1</td>
+          <td id="forestScore">3</td>
+          <td id="tempScore">1</td>
+        </tr>
+      </table>
     </div>
   </div>
-</div>
 
-    <div class="game-layout"> <! formats the question and score boxes>
-      <div class="question-box">
-        <h2 id="question">Loading...</h2>
-        <div class="answers">
-          <button onclick="choose(0)" id="btn0"></button>
-          <button onclick="choose(1)" id="btn1"></button>
-          <button onclick="choose(2)" id="btn2"></button>
-          <button onclick="choose(3)" id="btn3"></button>
-        </div>
-        <div class="feedback" id="feedback"></div>
-        <div style="margin-top: 15px; text-align: center;">
-          <button id="nextButton" onclick="nextQuestion()" style="display: none; padding: 10px 20px;">Next</button>
-        </div>
-      </div>
-      <div class="score-table">
-        <table style="width: 50%" class="center">
-          <tr>
-            <th>Air</th>
-            <th>Forest</th>
-            <th>Temperature</th>
-          </tr>
-          <tr>
-            <td id="airScore">1</td>
-            <td id="forestScore">3</td>
-            <td id="tempScore">1</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div id="restartButton" style="text-align: center; margin-top: 20px; display: none"> <! creates/formats restart button>
-      <button onclick="restartGame()" style="padding: 10px 20px; font-size: 16px">
-        Play Again
-      </button>
-    </div>
+  <div id="restartButton" style="text-align: center; margin-top: 20px; display: none"> <! creates/formats restart button>
+    <button onclick="restartGame()" style="padding: 10px 20px; font-size: 16px">
+      Play Again
+    </button>
+  </div>
 
     <script>
       const questions = [
@@ -289,9 +299,9 @@
 
       function restartGame() {
         questionIndex = 0
-        airLevel = 0
-        forestLevel = 0
-        tempLevel = 0
+        airLevel = 1
+        forestLevel = 3
+        tempLevel = 1
         updateMaps()
         updateScores()
         document.getElementById("restartButton").style.display = "none"
