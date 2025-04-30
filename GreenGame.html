@@ -269,6 +269,8 @@
       function choose(index) {
         setButtonsEnabled(false)
 
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+
         const a = questions[questionIndex].answers[index]
         airLevel = clamp(airLevel + a.air, -10, 10)
         forestLevel = clamp(forestLevel + a.forest, -10, 10)
