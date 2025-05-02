@@ -54,8 +54,9 @@
         cursor: pointer;
       }
       .maps img {
-        max-width: 300px;
-        margin: 5px;
+	max-width: 100%;
+  	height: auto;
+	max-width: 300px;
       }
       .feedback {
         font-style: italic;
@@ -67,6 +68,10 @@
           flex-direction: column;
           align-items: center;
         }
+	.maps img {
+    	  max-width: 50%;
+   	  height: auto;
+  	}
 	.game-layout {
     	  flex-direction: column;
     	  align-items: center;
@@ -97,21 +102,21 @@
     <div class="map-group" style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
       <div style="text-align: center;">
         <h4>Air Quality</h4>
-        <img id="airMap" src="air_1.png" alt="Air Quality" style="max-width: 300px;" />
+        <img id="airMap" src="air_1.png" alt="Air Quality" class="map-image" />
         <br />
-        <img src="air_key.png" alt="Air Quality Key" style="max-width: 300px; margin-top: 5px;" />
+        <img src="air_key.png" alt="Air Quality Key" class="map-image" margin-top: 5px;" />
       </div>
       <div style="text-align: center;">
         <h4>Forest Level</h4>
-        <img id="forestMap" src="forest_3.png" alt="Forest Level" style="max-width: 300px;" />
+        <img id="forestMap" src="forest_3.png" alt="Forest Level" class="map-image" />
         <br />
         <img src="forest_key.png" alt="Forest Level Key" style="max-width: 100px; margin-top: 5px;" />
       </div>
       <div style="text-align: center;">
         <h4>Temperature</h4>
-        <img id="tempMap" src="temp_1.png" alt="Temperature" style="max-width: 300px;" />
+        <img id="tempMap" src="temp_1.png" alt="Temperature" class="map-image" />
         <br />
-        <img src="temp_key.png" alt="Temperature Key" style="max-width: 300px;" />
+        <img src="temp_key.png" alt="Temperature Key" class="map-image" />
       </div>
     </div>
   </div>
