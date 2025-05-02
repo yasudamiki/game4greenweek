@@ -145,7 +145,7 @@
     </button>
   </div>
 
-  <div style="text-align: left; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 0.95em; color: #333;">
+  <div id="credits" style="text-align: left; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 0.95em; color: #333; display: none">
     <p>
       <strong>Note:</strong> Some images were edited via Adobe Photoshop to make changes more drastic, allowing for easier visualization of consequences. The edits that were made were done to simulate future scenarios in which air quality and deforestation continues to improve or worsen based on the players' in-game decisions.
     </p>
@@ -294,6 +294,7 @@
           .forEach((btn) => (btn.style.display = "none"));
         document.getElementById("nextButton").style.display = "none";
         document.getElementById("restartButton").style.display = "block";
+	document.getElementById("credits").style.display = "block";
         return;
       }
 
@@ -355,6 +356,7 @@
       updateMaps()
       updateScores()
       document.getElementById("restartButton").style.display = "none"
+      document.getElementById("credits").style.display = "none"
       displayQuestion()
     }
 
