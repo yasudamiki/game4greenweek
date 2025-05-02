@@ -268,13 +268,13 @@
     function startGame() {
       document.getElementById("homeScreen").style.display = "none";
       document.getElementById("gameScreen").style.display = "block";
-      displayQuestion(); // Start game logic
+      displayQuestion();
     }
 
     function setButtonsEnabled(enabled) {
       document.querySelectorAll(".answers button").forEach((btn) => {
         btn.disabled = !enabled
-        btn.style.opacity = enabled ? "1" : "0.6" // Optional: visually indicate disabled state
+        btn.style.opacity = enabled ? "1" : "0.6" 
         btn.style.cursor = enabled ? "pointer" : "default"
       })
     }
@@ -296,7 +296,7 @@
 
         document.getElementById("question").innerText = "Game Over! Thanks for playing.";
         document.getElementById("feedback").innerText = gameOverMessage;
-        document.getElementById("feedback").style.fontWeight = "normal"; // Remove bold
+        document.getElementById("feedback").style.fontWeight = "normal"; 
         document
           .querySelectorAll(".answers button")
           .forEach((btn) => (btn.style.display = "none"));
